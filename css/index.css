@@ -167,7 +167,7 @@ body {
 
 .foot span {
   display: block;
-  width: 21%;
+  width: 20%;
   height: 40px;
   line-height: 40px;
   float: left;
@@ -178,7 +178,10 @@ body {
   color: #888;
 }
 .foot span:first-child{
-  width:16%;
+  width:13%;
+}
+.foot span:last-child{
+  width:27%;
 }
 span.active {
   background: #00ADEE;
