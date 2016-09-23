@@ -1,0 +1,215 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  text-decoration: none;
+}
+
+body {
+  font-family: "微软雅黑","黑体";
+  background: #FFF;
+}
+
+.todobox {
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  background: #00ADEE;
+}
+
+.todobox h2 {
+  line-height: 50px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 100;
+  color: rgba(175, 47, 47, 0.15);
+  text-rendering: optimizeLegibility;
+  color: #FFF;
+}
+.card {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.card .header {
+  height: 40px;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+
+.card .header::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(../img/3.jpg) no-repeat;
+  margin: 10px;
+  opacity: 0.5;
+  background-size: 20px;
+  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a{
+  border:0;
+  box-shadow: none;
+}
+.card .header .ui-input-text input{
+  box-sizing: border-box;
+  border: 1px dashed #00ADEE;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  text-indent: 20px;
+  outline: none;
+  padding:0;
+  font-family:"微软雅黑";
+  font-size: 14px;
+}
+.card .todos {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card .todos .row {
+  width: 100%;
+  height: 40px;
+  margin: 0 auto;
+  border-bottom: 1px dotted #ccc;
+}
+
+.card .todos .row .check {
+  float: left;
+  width: 40px;
+  height: 40px;
+  background: url(../img/1.png) no-repeat center center;
+  background-size: 20px 20px;
+  cursor: pointer;
+}
+
+.card .todos .row p {
+  box-sizing: border-box;
+  /*width: 100%;*/
+  line-height: 40px;
+  margin-left:60px;
+  font-size: 14px;
+}
+
+.card .todos .row .delete {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: url(../img/ljt.png) no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  display: none;
+}
+
+.card .todos .row input {
+  display: none;
+  width: 100%;
+  padding-left: 60px;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  border: none;
+  float: left;
+  font-family: "Helvetica Neue", "微软雅黑", sans-serif;
+  font-size: 14px;
+}
+
+.card .todos .row:hover .delete {
+  display: block;
+}
+.card .todos .row.wancheng .check {
+  background: none;
+  margin: 10px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card .todos .row.wancheng p {
+  color: #ccc;
+  text-decoration: line-through;
+}
+
+.card .todos .row.bianji .check, .card .todos .row.bianji .delete, .card .todos .row.bianji p {
+  display: none;
+}
+
+.card .todos .row.bianji p {
+  display: none;
+}
+
+.card .todos .row.bianji input {
+  display: block;
+}
+
+.foot {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.foot span {
+  display: block;
+  width: 21%;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: normal;
+  color: #888;
+}
+.foot span:first-child{
+  width:16%;
+}
+span.active {
+  background: #00ADEE;
+  color:#fff;
+}
+.todos .row {
+  transition: all 0.8s ease;
+}
+
+.todos .row.ng-enter {
+  /*transform: translate3d(100%, 50px, -50px);*/
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.todos .row.ng-enter-active {
+  /*transform: translate3d(0, 0, 0);*/
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.todos .row.ng-leave {
+  height: 40px;
+  /*transform: translateX(100%);*/
+  transform: translateY(20px);
+  opacity: 1;
+}
+
+.todos .row.ng-leave-active {
+  height: 0;
+  transform: translateY(0);
+  opacity: 0;
+  overflow: hidden;
+}

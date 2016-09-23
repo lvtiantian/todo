@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>备忘录</title>
+    <link rel="stylesheet" href="jqm/jquery.mobile-1.4.5.css"/>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.js"></script>
+    <script src="jqm/jquery.mobile-1.4.5.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/my.js"></script>
+</head>
+<body ng-controller="myCtr">
+<div data-role="page">
+    <div data-role="header" data-position="fixed">
+        <div class="todobox">
+            <h2>我的备忘录</h2>
+        </div>
+    </div>
+    <div class="ui-content card">
+            <div class="header">
+                <input type="text"
+                       ng-keyup="add($event);save()"
+                       ng-model="name"
+                       placeholder="请输入您要添加的事件">
+            </div>
+            <ul class="todos" ng-init="tiaojian=''">
+                <li ng-class="{bianji:aa,wancheng:v.isDone}"
+                    ng-init="aa=false"
+                    ng-dblclick="aa=true;focus($event)"
+                    class="row"
+                    ng-repeat="v in todos | filter:{isDone:tiaojian} track by v.id">
+                    <div class="check"
+                         ng-click="v.isDone=!v.isDone;save()"></div>
+                    <p>{{v.name}}</p>
+                    <div ng-click="delete(v.id);save()"
+                         class="delete"></div>
+                    <input ng-blur="aa=false" type="text"
+                           ng-model="v.name"
+                           ng-change="save()">
+                </li>
+            </ul>
+    </div>
+    <div data-role="footer" data-position="fixed" class="foot">
+            <span class="left" ng-bind="(todos|filter:{isDone:tiaojian}).length"></span>
+            <span ng-class="{active:(tiaojian==='')}" ng-click="tiaojian='';setcount('quanbu')">所有</span>
+            <span  ng-class="{active:(tiaojian===true)}" ng-click="tiaojian=true;setcount('wancheng')">已完成</span>
+            <span  ng-class="{active:(tiaojian===false)}" ng-click="tiaojian=false;setcount('weiwan')">未完成</span>
+            <span class="right" ng-click="clear();save()">删除已完成的事件</span>
+    </div>
+</div>
+</body>
+</html>
