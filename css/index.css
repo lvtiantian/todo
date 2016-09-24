@@ -133,13 +133,14 @@ body {
   display: block;
 }
 .card .todos .row.wancheng .check {
-  background: none;
   margin: 10px;
   width: 18px;
   height: 18px;
   border: 1px solid #ccc;
   border-radius: 50%;
   cursor: pointer;
+  background: url(../img/2.png) no-repeat center center;
+  background-size:20px 20px;
 }
 
 .card .todos .row.wancheng p {
