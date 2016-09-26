@@ -1,17 +1,17 @@
 var app=angular.module("myapp",['ngAnimate']);
 app.controller("myCtr",['$scope','$timeout',function($scope,$timeout){
-    setInterval(function(){
-        $timeout(function(){
-            var date=new Date();
-            var h=date.getHours();
-            var m=date.getMinutes();
-            var s=date.getSeconds();
-            h=(h<10)?("0"+h):h;
-            m=(m<10)?("0"+m):m;
-            s=(s<10)?("0"+s):s;
-            $scope.title=h+':'+m+':'+s;
-        },0);
-    },500);
+    //setInterval(function(){
+    //    $timeout(function(){
+    //        var date=new Date();
+    //        var h=date.getHours();
+    //        var m=date.getMinutes();
+    //        var s=date.getSeconds();
+    //        h=(h<10)?("0"+h):h;
+    //        m=(m<10)?("0"+m):m;
+    //        s=(s<10)?("0"+s):s;
+    //        $scope.title=h+':'+m+':'+s;
+    //    },0);
+    //},500);
     if(localStorage.__x){
         $scope.todos=JSON.parse(localStorage.__x);
     }else{
